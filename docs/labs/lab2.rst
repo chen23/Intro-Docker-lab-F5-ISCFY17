@@ -15,14 +15,14 @@ Launch the 'WINSCP' shortcut that is on the Desktop.  Be sure to use this link, 
    
    If connection/authentication fails for some reason, here are the relevant information to launch your WinScp session:
 
-   * hostname : 10.1.20.101
-   * login: user
-   * password: user
+   * hostname : 10.1.10.101
+   * login: ubuntu
+   * ssh key: [On the Desktop]
 
    once logged in:
    
-      * on mesos-agent01: go to /home/user/mycontainer directory
-      * locally: select your c:\\Users\\user\\mycontainer directory
+      * on server01: go to /home/ubuntu/f5-intro-to-docker/mycontainer directory
+      * locally: select your c:\\Users\\Administrator\\Desktop\\f5-intro-to-docker\\mycontainer directory
 
 .. image:: ../images/lab2-winscp-connected.png
    :scale: 50 %
@@ -76,7 +76,7 @@ When prompted, click 'Yes' to overwrite the existing file.
 Docker build
 ------------
 
-Back to your terminal window (on **mesos-agent01**), run the following commands and verify that you’re in the correct directory:
+Back to your terminal window (on **server01**), run the following commands and verify that you’re in the correct directory:
 
 ::
 
@@ -120,7 +120,7 @@ Verifies that it works by running
 
    The option '-d' makes the container run in the background. We get our prompt back. 
 
-We can check it is up and running by connecting to **http://mesos-agent01:8080** in Chrome.
+We can check it is up and running by connecting to **http://10.1.10.11:8080** in Chrome.
 
 .. image:: ../images/lab2-dockerbuild-access-container-http.png
    :scale: 50 %
@@ -129,7 +129,7 @@ We can check it is up and running by connecting to **http://mesos-agent01:8080**
 
 .. note::
 
-   Pay attention to the difference in Server IP (agent01 is 10.1.20.101)
+   Pay attention to the difference in Server IP (server01 is 10.1.10.11)
 
 You are now running a supported version of PHP on the same host that was previously running an unsupported version.  Similar to the virtue of running vCMP; containers make it easier to run multiple versions of software on the same platform.i
 

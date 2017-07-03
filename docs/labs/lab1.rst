@@ -18,21 +18,21 @@ Goals of the lab
 The legacy Application
 ----------------------
 
-One of the use-cases for utilizing containers is to migrate an existing on-premises application to first run in a container and eventually migrate the container to run in a public cloud environment.  The first lab will migrate the existing app that is running at: *http://mesos-agent01/*
+One of the use-cases for utilizing containers is to migrate an existing on-premises application to first run in a container and eventually migrate the container to run in a public cloud environment.  The first lab will migrate the existing app that is running at: *http://10.1.10.11/*
 
-Launch Chrome and visit **http://mesos-agent01** (make sure to enter *http://*)
+Launch Chrome and visit **http://10.1.10.11** (make sure to enter *http://*)
 
 .. image:: ../images/www-legacy-app.png
    :scale: 50%
    :align: center
 
-10.1.20.101 is one of agent01 IP addresses. You can check this by typing **ifconfig eth1** in your putty session
+10.1.10.11 is one of server01 IP addresses. You can check this by typing **ifconfig eth1** in your putty session
 
 .. image:: ../images/ifconfig-eth1.png
    :scale: 50%
    :align: center
 
-The first step of this lab is to download a container that has a more recent version of PHP.  Note that PHP 5.5 is already an End of Life version of PHP!
+The first step of this lab is to download a container that has PHP.  
 
 Docker Pull
 -----------
@@ -88,7 +88,7 @@ This command will start the PHP 5.6 container.  Some of the options we specified
    :align: center
 
 
-Visit **http://mesos-agent01:8080** in Chrome and you will see the following error page (expected).
+Visit **http://10.1.10.11:8080** in Chrome and you will see the following error page (expected).
 
 .. image:: ../images/lab1-access-agent01-8080-forbidden.png
    :scale: 50 %

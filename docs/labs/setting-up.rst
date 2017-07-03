@@ -3,7 +3,7 @@ Setting up
 
 There are GUI interfaces to manage a Docker container, but to start we are going to learn about using the command-line interface.  Most users will prefer to use command-line tools.  
 
-Open a session on mesos-agent01. Double click on this icon on your desktop
+Open a session on server01. Double click on this icon on your desktop
 
 .. image:: ../images/agent01-putty-icon.png
    :scale: 50 %
@@ -13,8 +13,8 @@ You should see a large terminal window.  If the Text is too small; please visit 
 
 You should be automatically logged in. If not, use the following credentials: 
 
-* Login: user 
-* Password: user
+* Login: ubuntu 
+* SSH Key: [Located on Desktop]
 
 .. image: ../images/putty-session-agent01.png
    :scale: 50%

@@ -4,7 +4,7 @@ Lab 3: Publishing a container
 Docker registry
 ---------------
 
-The container is now running on mesos-agent01, but what if we want to have it run on mesos-agent02? 
+The container is now running on mesos-agent01, but what if we want to have it run on server02? 
 It is possible to manually export/import the image from one host to another, but it is more practical to use a Docker registry.
 
 A Docker registry is an image repository of Docker containers.  You can 'push' a container into the public Docker Hub or maintain your own private Docker registry/repository.
@@ -17,7 +17,7 @@ For the lab we have previously created a registry that lives at 'registry:5000' 
 Docker tag
 ----------
 
-Currently 'mycontainer:5.6' lives locally on mesos-agent01.  We need to apply a tag that will indicate where we want it to go, then me need to push/copy the image to that location.  
+Currently 'mycontainer:5.6' lives locally on server01.  We need to apply a tag that will indicate where we want it to go, then me need to push/copy the image to that location.  
 
 Run
 
@@ -40,7 +40,7 @@ Now run:
 
    docker push registry:5000/mycontainer:5.6 
 
-Open a terminal window to agent02. You have the following shortcut on your desktop, use it. 
+Open a terminal window to server02. You have the following shortcut on your desktop, use it. 
 
 .. image:: ../images/lab3-dockertag-putty-agent02.png
    :align: center
@@ -67,7 +67,7 @@ Note that the command failed.  The container does not exist on this host.  Now r
 .. image:: ../images/lab3-dockertag-docker-run-success.png
    :align: center
  
-The container was found on the private registry and was started.  Verify by visiting **http://mesos-agent02:8080** in Chrome.
+The container was found on the private registry and was started.  Verify by visiting **http://10.1.10.12:8080** in Chrome.
 
 .. image:: ../images/lab3-dockertag-container-access-http.png
    :align: center

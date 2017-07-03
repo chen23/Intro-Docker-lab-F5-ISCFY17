@@ -6,7 +6,7 @@ Ephemeral ports
 
 Up to this point we have been using a static port mapping of port 8080 on the host to port 80 on a container.  This works OK for a limited use-case, but generally you should not expect a container’s port binding to be static.  
 
-Connect to **mesos-agent01** via putty (use shortcut on Desktop) and run:
+Connect to **server01** via putty (use shortcut on Desktop) and run:
 
 ::
  
@@ -21,7 +21,7 @@ Connect to **mesos-agent01** via putty (use shortcut on Desktop) and run:
 
    the port option allows you to see the port mappings that was done with the container. 
 
-Record the port value that is returned (your output will differ) and open a new Chrome window for **http://mesos-agent01:[PORT VALUE]**
+Record the port value that is returned (your output will differ) and open a new Chrome window for **http://10.1.10.11:[PORT VALUE]**
 
 .. image:: ../images/lab4-ephemeralport-port-http-access.png
    :scale: 50 %
@@ -43,7 +43,7 @@ Observe that the port value has changed!
 Linux Bridge Network
 --------------------
 
-From the previous labs you may have noticed that on both mesos-agent01 and mesos-agent02 the container is running in the 172.17.0.0/16 network.  By default Docker will create a Linux Bridge network on the host called *docker0*.  
+From the previous labs you may have noticed that on both server01 and server02 the container is running in the 172.17.0.0/16 network.  By default Docker will create a Linux Bridge network on the host called *docker0*.  
 
 Connect via putty to **mesos-agent01** and run:
 
@@ -54,18 +54,18 @@ Connect via putty to **mesos-agent01** and run:
 .. image:: ../images/lab4-linuxbridgenetwork-ifconfig-docker0.png
    :align: center
 
-From Chrome visit **http://mesos-agent01:[PORT VALUE]** (port value from last lab step) and record what the Server IP value is. 
+From Chrome visit **http://10.1.10.11:[PORT VALUE]** (port value from last lab step) and record what the Server IP value is. 
 
 .. image:: ../images/lab4-linuxbridgenetwork-myapp2-access-http.png
    :scale: 50 %
    :align: center
 
-If you remember, agent01 interface eth1 has the IP of 10.1.20.101
+If you remember, agent01 interface eth1 has the IP of 10.1.10.11
 
 .. image:: ../images/lab4-linuxbridgenetwork-ifconfig-eth1.png
    :align: center
 
-Let’s create a route on our windows client so that all traffic related to the container’s network is sent to our agent01 interface: 
+Let’s create a route on our windows client so that all traffic related to the container’s network is sent to our server01 interface: 
 
 Open a **Windows terminal window** (you have a shortcut on your desktop)
 
@@ -78,15 +78,15 @@ In the windows terminal, run:
 
    route add 172.17.0.0 mask 255.255.0.0 10.1.20.101
 
-In Chrome open a tab to **http://[server ip]**
+In Chrome open a tab to **http://[container ip]**
 
 .. image:: ../images/lab4-linuxbridgenetwork-myapp2-access-http-bridge-network.png
    :scale: 50 %
    :align: center
 
-What happened?  On mesos-agent01 IP forwarding is enabled.  When we created a static route from the Windows desktop to the Linux host we are able to forward packets directly to the Linux bridge network and by-pass the IPtables rules that were used previously for port forwarding.
+What happened?  On server01 IP forwarding is enabled.  When we created a static route from the Windows desktop to the Linux host we are able to forward packets directly to the Linux bridge network and by-pass the IPtables rules that were used previously for port forwarding.
 
-You can check ip forwarding is enabled by running this command on **mesos-agent01**
+You can check ip forwarding is enabled by running this command on **server01**
 
 ::
 
