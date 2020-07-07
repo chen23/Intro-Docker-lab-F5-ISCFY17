@@ -15,7 +15,7 @@ Launch the 'WINSCP' shortcut that is on the Desktop.  Be sure to use this link, 
    
    If connection/authentication fails for some reason, here are the relevant information to launch your WinScp session:
 
-   * hostname : 10.1.10.101
+   * hostname : 10.1.10.11
    * login: ubuntu
    * ssh key: [On the Desktop]
 
