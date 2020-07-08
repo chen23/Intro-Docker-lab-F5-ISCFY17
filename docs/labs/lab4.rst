@@ -76,7 +76,7 @@ In the windows terminal, run:
 
 ::
 
-   route add 172.17.0.0 mask 255.255.0.0 10.1.20.101
+   route add 172.17.0.0 mask 255.255.0.0 10.1.10.11
 
 In Chrome open a tab to **http://[container ip]**
 
