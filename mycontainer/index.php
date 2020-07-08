@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>PHP Page</title>
-<style>table { margin 10px; border: 2px solid; } table td {padding: 15px;}</styl                                                                                                                                   e>
+<style>table { margin 10px; border: 2px solid; } table td {padding: 15px;}</style>
 </head>
 <body>
 <strong>Created By: </strong>
@@ -19,7 +19,7 @@ Your Name
 <tr>
 <td><?php echo phpversion(); ?></td>
 <td><?php echo gethostname(); ?></td>
-<td><?php printf("%s:%s",$_SERVER['SERVER_ADDR'],$_SERVER['SERVER_PORT']); ?></t                                                                                                                                   d>
+<td><?php printf("%s:%s",$_SERVER['SERVER_ADDR'],$_SERVER['SERVER_PORT']); ?></td>
 <td><?php echo $_SERVER['REMOTE_ADDR']?></td>
 
 </tr>
